@@ -13,13 +13,16 @@
 			<th>Author</th>
 			<th>Publication Year</th>
 			<th>ISBN</th>
+			<th>Category
 			<th>Price</th>
+			
 		</tr>
 		<tr th:each="book : ${books}">
 			<td th:text="${book.title}">model</td>
 			<td th:text="${book.author}">model</td>
 			<td th:text="${book.year}">model</td>
 			<td th:text="${book.isbn}">model</td>
+			<td th:text = "${book.category.name}"></td>
 			<td th:text="${book.price}">model</td>
 			<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
 		</tr>
